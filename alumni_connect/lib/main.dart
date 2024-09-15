@@ -1,4 +1,4 @@
-import 'package:alumni_connect/presentation/pages/home_page.dart';
+import 'package:alumni_connect/presentation/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const HomePage(),
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(useMaterial3: true).copyWith(
         visualDensity: VisualDensity.adaptivePlatformDensity,

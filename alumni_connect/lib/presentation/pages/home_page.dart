@@ -6,6 +6,10 @@ import 'package:url_launcher/url_launcher.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  static Route getRoute(){
+    return MaterialPageRoute(builder: (context) => const HomePage(),);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
