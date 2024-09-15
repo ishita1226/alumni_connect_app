@@ -39,6 +39,9 @@ dependencies:
   url_launcher: ^6.3.0
   flutter_animate: ^4.5.0
   intl: ^0.19.0
+  thanos_snap_effect: ^0.0.6
+  flutter_spinkit: ^5.2.1
+  snappable_thanos: ^0.0.4
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +59,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  shaders:
+    - packages/thanos_snap_effect/shader/thanos_snap_effect.glsl
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
