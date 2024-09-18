@@ -42,7 +42,11 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
       appBar: AppBar(
         title: Row(
           children: [
-            Image.asset('assets/images/image.png', height: 30),
+            Image.asset(
+              'assets/images/image2.png',
+              height: 30,
+              color: Colors.white,
+            ),
             const SizedBox(width: 8),
             const Text(
               'Welcome! User',
