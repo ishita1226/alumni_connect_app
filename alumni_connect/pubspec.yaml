@@ -43,6 +43,7 @@ dependencies:
   flutter_spinkit: ^5.2.1
   flutter_bloc: ^8.1.6
   equatable: ^2.0.5
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -58,10 +59,10 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
-# The following section is specific to Flutter packages.
-flutter:
-  shaders:
-    - packages/thanos_snap_effect/shader/thanos_snap_effect.glsl
+# # The following section is specific to Flutter packages.
+# flutter:
+#   shaders:
+#     - packages/thanos_snap_effect/shader/thanos_snap_effect.glsl
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
