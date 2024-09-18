@@ -48,8 +48,7 @@ class SplashScreenState extends State<SplashScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Spacer(),
-            const Spacer(),
+            const Spacer(flex: 2,),
             // Logo or splash screen image
             SizedBox(
               height: size.height * .3,
@@ -58,8 +57,7 @@ class SplashScreenState extends State<SplashScreen>
                 height: size.height * .3,
               ),
             ),
-            const Spacer(),
-            const Spacer(),
+            const Spacer(flex: 2),
             // Loading animation
             const SpinKitCircle(
               color: Colors.white,
@@ -75,7 +73,7 @@ class SplashScreenState extends State<SplashScreen>
                 color: Colors.white,
               ),
             ),
-            const Spacer(),
+            const Spacer(flex: 1),
           ],
         ),
       ),

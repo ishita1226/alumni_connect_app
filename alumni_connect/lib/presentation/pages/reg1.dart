@@ -38,7 +38,6 @@ class BasicInformationPageState extends State<BasicInformationPage> {
                         const Text(
                           "Basic Information",
                           style: TextStyle(
-                            fontFamily: 'Poppins',
                             fontSize: 24,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -89,7 +88,6 @@ class BasicInformationPageState extends State<BasicInformationPage> {
                                 const Text(
                                   "Already have an account?",
                                   style: TextStyle(
-                                    fontFamily: 'Poppins',
                                     color: Colors.white70,
                                     fontSize: 14,
                                   ),
@@ -107,7 +105,6 @@ class BasicInformationPageState extends State<BasicInformationPage> {
                                   child: const Text(
                                     "Login",
                                     style: TextStyle(
-                                      fontFamily: 'Poppins',
                                       color: Colors.blueAccent,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
@@ -146,7 +143,6 @@ class BasicInformationPageState extends State<BasicInformationPage> {
                                 child: const Text(
                                   'Next',
                                   style: TextStyle(
-                                    fontFamily: 'Poppins',
                                     color: Colors.black,
                                     fontSize: 16,
                                   ),
@@ -180,7 +176,6 @@ class BasicInformationPageState extends State<BasicInformationPage> {
             "Step 1",
             style: TextStyle(
               color: step == 1 ? Colors.black : Colors.white,
-              fontFamily: 'Poppins',
             ),
           ),
         ),
@@ -201,7 +196,6 @@ class BasicInformationPageState extends State<BasicInformationPage> {
             "Step 2",
             style: TextStyle(
               color: step == 2 ? Colors.black : Colors.white,
-              fontFamily: 'Poppins',
             ),
           ),
         ),

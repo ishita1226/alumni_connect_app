@@ -51,7 +51,6 @@ class ProfileScreenState extends State<ProfileScreen> {
               const Text(
                 'Profile',
                 style: TextStyle(
-                  fontFamily: 'Poppins',
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -149,7 +148,6 @@ class ProfileScreenState extends State<ProfileScreen> {
             title,
             style: const TextStyle(
               fontSize: 13,
-              fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
@@ -168,7 +166,6 @@ class ProfileScreenState extends State<ProfileScreen> {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 11,
-                fontFamily: 'Poppins',
                 fontWeight: FontWeight.w700,
                 color: Colors.black,
               ),
@@ -221,7 +218,6 @@ class ProfileScreenState extends State<ProfileScreen> {
           Text(
             title,
             style: const TextStyle(
-              fontFamily: 'Poppins',
               fontSize: 13,
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -231,7 +227,6 @@ class ProfileScreenState extends State<ProfileScreen> {
           Text(
             content,
             style: const TextStyle(
-              fontFamily: 'Poppins',
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: Colors.white,
