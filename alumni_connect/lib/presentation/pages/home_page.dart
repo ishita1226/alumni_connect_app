@@ -242,29 +242,40 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildStorySection(BoxConstraints constraints) {
-    return SizedBox(
-      height: 100,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 20,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: CircleAvatar(
-              radius: constraints.maxHeight * .1,
-              backgroundColor: Colors.grey[300],
-              child: const Icon(
-                Icons.person,
-                size: 50,
-                color: Colors.black,
-              ),
-            ),
-          )
-              .animate(delay: (200 * index).ms)
-              .fadeIn(duration: 200.ms)
-              .scale(begin: const Offset(0.5, 0.5), end: const Offset(1, 1));
-        },
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          child: Text(
+            'Success Stories',
+            textAlign: TextAlign.left,
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+        ).animate().fadeIn(duration: 1000.ms).slideX(),
+        SizedBox(
+          height: 100,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 20,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CircleAvatar(
+                  radius: constraints.maxHeight * .1,
+                  backgroundColor: Colors.grey[300],
+                  child: const Icon(
+                    Icons.person,
+                    size: 50,
+                    color: Colors.black,
+                  ),
+                ),
+              ).animate(delay: (200 * index).ms).fadeIn(duration: 200.ms).scale(
+                  begin: const Offset(0.5, 0.5), end: const Offset(1, 1));
+            },
+          ),
+        ),
+      ],
     );
   }
 
