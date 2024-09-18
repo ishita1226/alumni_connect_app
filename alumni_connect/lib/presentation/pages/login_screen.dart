@@ -71,10 +71,10 @@ class StudentLoginScreenState extends State<StudentLoginPage> {
                       children: [
                         SizedBox(height: size.height * 0.05),
                         Image.asset(
-                          'assets/images/image.png',
+                          'assets/images/image2.png',
                           width: 200,
                         ),
-                        SizedBox(height: size.height * 0.05),
+                        SizedBox(height: size.height * 0.02),
                         const Text(
                           "Welcome!",
                           style: TextStyle(
