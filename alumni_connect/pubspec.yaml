@@ -42,6 +42,7 @@ dependencies:
   thanos_snap_effect: ^0.0.6
   flutter_spinkit: ^5.2.1
   snappable_thanos: ^0.0.4
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
