@@ -48,13 +48,16 @@ class SplashScreenState extends State<SplashScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Spacer(flex: 2,),
+            const Spacer(
+              flex: 2,
+            ),
             // Logo or splash screen image
             SizedBox(
               height: size.height * .3,
               child: Image.asset(
                 'assets/images/image2.png',
-                height: size.height * .3,
+                alignment: Alignment.center,
+                fit: BoxFit.fill,
               ),
             ),
             const Spacer(flex: 2),
@@ -64,15 +67,6 @@ class SplashScreenState extends State<SplashScreen>
               size: 50.0,
             ),
             const SizedBox(height: 40),
-            // App Name (optional)
-            Text(
-              'Alumni Connect',
-              style: TextStyle(
-                fontSize: size.height * .05,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
             const Spacer(flex: 1),
           ],
         ),
