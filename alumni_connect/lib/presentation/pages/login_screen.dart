@@ -242,6 +242,10 @@ class StudentLoginScreenState extends State<StudentLoginPage> {
                 },
               )
             : null,
+        border: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.white70),
+          borderRadius: BorderRadius.circular(10),
+        ),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.white70),
           borderRadius: BorderRadius.circular(10),

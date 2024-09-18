@@ -48,34 +48,30 @@ class SplashScreenState extends State<SplashScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Spacer(),
-            const Spacer(),
+            const Spacer(
+              flex: 2,
+            ),
             // Logo or splash screen image
             SizedBox(
               height: size.height * .3,
               child: Image.asset(
+
                 'assets/images/image_logo.png',
                 height: size.height * .3,
+
+                // 'assets/images/image2.png',
+                alignment: Alignment.center,
+                fit: BoxFit.fill,
               ),
             ),
-            const Spacer(),
-            const Spacer(),
+            const Spacer(flex: 2),
             // Loading animation
             const SpinKitCircle(
               color: Colors.white,
               size: 50.0,
             ),
             const SizedBox(height: 40),
-            // App Name (optional)
-            Text(
-              'Alumni Connect',
-              style: TextStyle(
-                fontSize: size.height * .05,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            const Spacer(),
+            const Spacer(flex: 1),
           ],
         ),
       ),

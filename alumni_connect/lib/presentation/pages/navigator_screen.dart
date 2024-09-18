@@ -43,6 +43,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
         title: Row(
           children: [
             Image.asset('assets/images/image_logo.png', height: 30),
+
             const SizedBox(width: 8),
             const Text(
               'Welcome! User',

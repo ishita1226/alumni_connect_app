@@ -46,7 +46,6 @@ class EducationInformationPageState extends State<EducationInformationPage> {
                         const Text(
                           "Education Information",
                           style: TextStyle(
-                            // fontFamily: 'Poppins',
                             fontSize: 24,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -99,7 +98,6 @@ class EducationInformationPageState extends State<EducationInformationPage> {
                             child: const Text(
                               'Register Now',
                               style: TextStyle(
-                                // fontFamily: 'Poppins',
                                 color: Colors.black,
                                 fontSize: 16,
                               ),
@@ -141,7 +139,6 @@ class EducationInformationPageState extends State<EducationInformationPage> {
             "Step 1",
             style: TextStyle(
               color: step == 1 ? Colors.white : Colors.black,
-              // fontFamily: 'Poppins',
             ),
           ),
         ),
@@ -162,7 +159,6 @@ class EducationInformationPageState extends State<EducationInformationPage> {
             "Step 2",
             style: TextStyle(
               color: step == 2 ? Colors.black : Colors.white,
-              fontFamily: 'Poppins',
             ),
           ),
         ),
