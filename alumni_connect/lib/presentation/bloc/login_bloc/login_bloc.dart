@@ -18,10 +18,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           (user) =>
               user['email'] == event.email &&
               user['password'] == event.password,
-          orElse: () {
-            print('object');
-            return {};
-          },
+          orElse: () => {},
         );
 
         if (user.isNotEmpty) {

@@ -37,36 +37,43 @@ class StudentLoginScreenState extends State<StudentLoginPage> {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: size.width * 0.08),
             child: SingleChildScrollView(
-              child: Form(
-                key: _formKey,
-                child: BlocConsumer<LoginBloc, LoginState>(
-                  listener: (context, state) {
-                    if (state is LoginSuccess) {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        NavigatorScreen.getRoute(),
-                        (route) => false,
-                      );
-                    } else if (state is LoginFailure) {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text(state.error),
-                      ));
-                    }
-                  },
-                  builder: (context, state) {
-                    if (state is LoginLoading) {
-                      return const Center(
+              child: BlocConsumer<LoginBloc, LoginState>(
+                listener: (context, state) {
+                  if (state is LoginSuccess) {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      NavigatorScreen.getRoute(),
+                      (route) => false,
+                    );
+                  } else if (state is LoginFailure) {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text(state.error),
+                    ));
+                  }
+                },
+                builder: (context, state) {
+                  if (state is LoginLoading) {
+                    return SizedBox(
+                      height: size.height,
+                      width: size.width,
+                      child: const Center(
                         child: SpinKitCircle(
                           color: Colors.white,
+                          size: 50,
                         ),
-                      );
-                    }
-                    return Column(
+                      ),
+                    );
+                  }
+                  return Form(
+                    key: _formKey,
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(height: size.height * 0.05),
-                        Image.asset('assets/images/image.png',
-                            width: size.width * 0.4),
+                        Image.asset(
+                          'assets/images/image.png',
+                          width: 200,
+                        ),
                         SizedBox(height: size.height * 0.05),
                         const Text(
                           "Welcome!",
@@ -195,9 +202,9 @@ class StudentLoginScreenState extends State<StudentLoginPage> {
                           ],
                         ),
                       ],
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
             ),
           ),
