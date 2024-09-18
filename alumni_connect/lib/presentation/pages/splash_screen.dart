@@ -1,7 +1,6 @@
 import 'package:alumni_connect/presentation/pages/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:thanos_snap_effect/thanos_snap_effect.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -31,9 +30,7 @@ class SplashScreenState extends State<SplashScreen>
   }
 
   Future<void> _navigate() async {
-    await Future.delayed(const Duration(seconds: 1), () async {
-      await _animationController.forward();
-    });
+    await Future.delayed(const Duration(seconds: 3), () {});
     if (mounted) {
       Navigator.of(context).pushAndRemoveUntil(
         StudentLoginPage.getRoute(),
@@ -54,21 +51,11 @@ class SplashScreenState extends State<SplashScreen>
             const Spacer(),
             const Spacer(),
             // Logo or splash screen image
-            Snappable(
-              animation: _animationController.view,
-              outerPadding: const EdgeInsets.all(40),
-              style: const SnappableStyle(
-                particleSize: SnappableParticleSize.absoluteDp(
-                  width: 8,
-                  height: 8,
-                ),
-              ),
-              child: SizedBox(
+            SizedBox(
+              height: size.height * .3,
+              child: Image.asset(
+                'assets/images/image.png',
                 height: size.height * .3,
-                child: Image.asset(
-                  'assets/images/image.png',
-                  height: size.height * .3,
-                ),
               ),
             ),
             const Spacer(),
