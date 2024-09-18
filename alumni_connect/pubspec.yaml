@@ -60,7 +60,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # # The following section is specific to Flutter packages.
-# flutter:
+flutter:
 #   shaders:
 #     - packages/thanos_snap_effect/shader/thanos_snap_effect.glsl
 
