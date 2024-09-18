@@ -84,7 +84,7 @@ class EducationInformationPageState extends State<EducationInformationPage> {
                               // Add registration logic here
                               Navigator.pushAndRemoveUntil(
                                 context,
-                                NavigatorScreen.getRoute(),
+                                NavigatorScreen.getRoute({}),
                                 (route) => false,
                               );
                             },

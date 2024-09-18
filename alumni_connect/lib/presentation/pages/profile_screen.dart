@@ -5,7 +5,9 @@ import 'package:alumni_connect/presentation/widgets/icon_profile.dart'; // Impor
 import 'dart:io'; // For File
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+  const ProfileScreen({super.key, required this.user});
+
+  final Map<String, dynamic> user;
 
   @override
   ProfileScreenState createState() => ProfileScreenState();
@@ -24,6 +26,8 @@ class ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    String languages = widget.user['languages'].toString().substring(1);
+    languages = languages.substring(0, languages.length - 1);
 
     return Scaffold(
       body: GradientBackground(
@@ -37,14 +41,14 @@ class ProfileScreenState extends State<ProfileScreen> {
               Row(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_back, color: Colors.white),
+                    icon: const Icon(Icons.arrow_back, color: Colors.white),
                     onPressed: () {
                       Navigator.pop(context);
                     },
                   ),
                 ],
               ),
-              Text(
+              const Text(
                 'Profile',
                 style: TextStyle(
                   fontFamily: 'Poppins',
@@ -53,17 +57,22 @@ class ProfileScreenState extends State<ProfileScreen> {
                   color: Colors.white,
                 ),
               ),
-              SizedBox(height: 10), // Reduced space between title and profile picture
+              const SizedBox(
+                  height:
+                      10), // Reduced space between title and profile picture
 
               // Profile Picture and Upload Button
               Align(
-                alignment: Alignment.center, // Move the profile image to the left
+                alignment:
+                    Alignment.center, // Move the profile image to the left
                 child: ProfileIcon(
                   profileImage: _profileImage,
                   onImagePicked: _onImagePicked, // Handle the image picked
                 ),
               ),
-              SizedBox(height: 10), // Reduced space between profile picture and blocks
+              const SizedBox(
+                  height:
+                      10), // Reduced space between profile picture and blocks
 
               // Profile Info Blocks
               Expanded(
@@ -72,20 +81,24 @@ class ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     Wrap(
                       alignment: WrapAlignment.center,
-                      spacing: screenWidth * 0.04, // Dynamic spacing based on screen width
+                      spacing: screenWidth *
+                          0.04, // Dynamic spacing based on screen width
                       runSpacing: 16,
                       children: [
-                        
-                        buildProfileBlock("First Name", "Shri"),
-                        buildProfileBlock("Last Name", "Ram"),
-                        buildProfileBlock("Email", "shriram@gmail.com"),
-                        buildProfileBlock("College", "Rajkiya Engineering College"),
-                        buildProfileBlock("Language Known", "C, C++, JAVA, Dart"),
-                        buildProfileBlock("Tech Stack", "Flutter Development"),
+                        buildProfileBlock(
+                            "First Name", widget.user['first name'] ?? ''),
+                        buildProfileBlock(
+                            "Last Name", widget.user['last name'] ?? ''),
+                        buildProfileBlock("Email", widget.user['email'] ?? ''),
+                        buildProfileBlock(
+                            "College", widget.user['college name'] ?? ''),
+                        buildProfileBlock("Language Known", languages),
+                        buildProfileBlock(
+                            "Tech Stack", widget.user['techs'] ?? ''),
                       ],
                     ),
-                    
-                    SizedBox(height: 20),
+
+                    const SizedBox(height: 20),
 
                     // Rating and Status row
                     Row(
@@ -107,13 +120,14 @@ class ProfileScreenState extends State<ProfileScreen> {
 
   // Reusable profile block widget
   Widget buildProfileBlock(String title, String content) {
+    final size = MediaQuery.of(context).size;
     return Container(
       height: 77,
-      width: MediaQuery.of(context).size.width * 0.42,
+      width: size.width * 0.42,
       decoration: BoxDecoration(
-        color: Color(0xFF666D73),
+        color: const Color(0xFF666D73),
         borderRadius: BorderRadius.circular(10), // Slightly rounded corners
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5,
             blurStyle: BlurStyle.solid,
@@ -142,7 +156,7 @@ class ProfileScreenState extends State<ProfileScreen> {
           ),
           Container(
             height: 31,
-            width: 115,
+            width: size.width * 0.25,
             alignment: Alignment.center,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
@@ -150,8 +164,10 @@ class ProfileScreenState extends State<ProfileScreen> {
             ),
             child: Text(
               content,
+              softWrap: true,
+              textAlign: TextAlign.center,
               style: const TextStyle(
-                fontSize: 8,
+                fontSize: 11,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w700,
                 color: Colors.black,
@@ -165,14 +181,14 @@ class ProfileScreenState extends State<ProfileScreen> {
 
   // Reusable widget for Rating and Status blocks
   Widget buildRatingBlock() {
-    return buildReusableBlock('Connections', '148', Color(0xFF0FA867));
+    return buildReusableBlock('Connections', '148', const Color(0xFF0FA867));
   }
 
   Widget buildStatusBlock() {
-    return InkWell(child: buildReusableBlock('Upgrade to Alumni', 'Click Here', Color(0xFF1D1D1D)),
-    onTap: () {
-      
-    },
+    return InkWell(
+      child: buildReusableBlock(
+          'Upgrade to Alumni', 'Click Here', const Color(0xFF1D1D1D)),
+      onTap: () {},
     );
   }
 
@@ -184,7 +200,7 @@ class ProfileScreenState extends State<ProfileScreen> {
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 5,
             blurStyle: BlurStyle.solid,
@@ -204,21 +220,20 @@ class ProfileScreenState extends State<ProfileScreen> {
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontFamily: 'Poppins',
               fontSize: 13,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             content,
-            style: TextStyle(
+            style: const TextStyle(
               fontFamily: 'Poppins',
               fontSize: 12,
               fontWeight: FontWeight.bold,
-              
               color: Colors.white,
             ),
           ),
@@ -227,4 +242,3 @@ class ProfileScreenState extends State<ProfileScreen> {
     );
   }
 }
-

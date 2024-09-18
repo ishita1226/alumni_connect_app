@@ -22,7 +22,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         );
 
         if (user.isNotEmpty) {
-          emit(LoginSuccess());
+          emit(LoginSuccess(user: user));
         } else {
           emit(LoginFailure('Invalid email or password'));
         }

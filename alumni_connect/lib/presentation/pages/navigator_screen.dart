@@ -6,11 +6,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NavigatorScreen extends StatefulWidget {
-  const NavigatorScreen({super.key});
+  const NavigatorScreen({super.key, required this.user});
 
-  static Route getRoute() {
+  final Map<String, dynamic> user;
+
+  static Route getRoute(Map<String, dynamic> user) {
     return MaterialPageRoute(
-      builder: (context) => const NavigatorScreen(),
+      builder: (context) => NavigatorScreen(
+        user: user,
+      ),
     );
   }
 
@@ -20,12 +24,18 @@ class NavigatorScreen extends StatefulWidget {
 
 class _NavigatorScreenState extends State<NavigatorScreen> {
   int _index = 0;
-  final screens = const [
-    HomePage(),
-    NetworkScreen(),
-    JobsPortalScreen(),
-    ProfileScreen(),
-  ];
+  late final List<Widget> screens;
+  @override
+  void initState() {
+    super.initState();
+    screens = [
+      const HomePage(),
+      const NetworkScreen(),
+      const JobsPortalScreen(),
+      ProfileScreen(user: widget.user),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

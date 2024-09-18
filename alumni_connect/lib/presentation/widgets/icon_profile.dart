@@ -32,7 +32,7 @@ class ProfileIconState extends State<ProfileIcon> {
           radius: 40,
           backgroundImage: widget.profileImage != null
               ? FileImage(widget.profileImage!)
-              : const AssetImage('assets/images/add_a_photo.png')
+              : const AssetImage('assets/images/add_a_photo.jpg')
                   as ImageProvider, // Placeholder if no image
         ),
         Positioned(

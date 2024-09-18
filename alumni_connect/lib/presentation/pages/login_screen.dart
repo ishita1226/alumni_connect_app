@@ -42,7 +42,7 @@ class StudentLoginScreenState extends State<StudentLoginPage> {
                   if (state is LoginSuccess) {
                     Navigator.pushAndRemoveUntil(
                       context,
-                      NavigatorScreen.getRoute(),
+                      NavigatorScreen.getRoute(state.user),
                       (route) => false,
                     );
                   } else if (state is LoginFailure) {
