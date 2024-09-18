@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
         'mode': 'online',
         'link': 'https://meet.google.com/htf-hogo-tsy?authuser=3',
         'image':
-            'https://marketplace.canva.com/EAGCxslOSOU/1/0/1131w/canva-blue-and-white-geometric-shapes-conference-poster-WytXZKj8OgA.jpg',
+            'https://media.istockphoto.com/id/1519542517/photo/convocation-ceremony-rear-view-asian-graduation-university-students-together-with-dean.jpg?s=1024x1024&w=is&k=20&c=SCjB3VsvbrJ3fiQyiByUirflXJuDbBLZr28G2HyuV3k=',
       },
       {
         'title': 'Career Fair',
@@ -68,7 +68,7 @@ class HomePage extends StatelessWidget {
         'mode': 'offline',
         'location': 'AB2 - G6 (Smart Class)',
         'image':
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqp9dSTMjtKNwg224PjUIzgoO-VtNu2PTfrg&s',
+            'https://media.istockphoto.com/id/851021154/photo/3d-illustration-of-a-sign-saying-training-with-a-graduation-cap-on.jpg?s=1024x1024&w=is&k=20&c=EKsdZ0yC5aAsl6tOSaCyyDceN-krOfRyhBHJbq1IXzg=',
       },
       {
         'title': 'Alumni Meetup',
@@ -78,7 +78,7 @@ class HomePage extends StatelessWidget {
         'mode': 'offline',
         'location': 'University Auditorium',
         'image':
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb76xbuMI2eQP1eOBQa06mFzYv0H4sRCuKnA&s',
+            'https://images.unsplash.com/photo-1462536943532-57a629f6cc60?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       },
     ];
 
@@ -151,6 +151,7 @@ class HomePage extends StatelessWidget {
                             child: Image.network(
                               event['image']!,
                               fit: BoxFit.fill,
+                              filterQuality: FilterQuality.high,
                             ),
                           ),
                           Positioned.fill(

@@ -2,10 +2,15 @@ final List<Map<String, dynamic>> users = [
   {
     'email': 'rec.alumni@gmail.com',
     'password': 'Rec@123',
-    'first name': 'ABC',
-    'last name': 'DEF',
+    'first name': 'Satyam',
+    'last name': 'Singh',
     'college name': 'Rajkiya Engineering College, Sonbhadra',
-    'languages': ['C', 'C++', 'Java', 'Python',],
+    'languages': [
+      'C',
+      'C++',
+      'Java',
+      'Python',
+    ],
     'techs': 'Web Development',
   },
   {
@@ -14,7 +19,11 @@ final List<Map<String, dynamic>> users = [
     'first name': 'Mridul',
     'last name': 'Mishra',
     'college name': 'Rajkiya Engineering College, Sonbhadra',
-    'languages': ['C', 'Java', 'Python',],
+    'languages': [
+      'C',
+      'Java',
+      'Python',
+    ],
     'techs': 'Flutter Development',
   },
 ];

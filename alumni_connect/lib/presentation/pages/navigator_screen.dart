@@ -39,25 +39,47 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(80),
+        child: Column(
           children: [
-            Image.asset('assets/images/image_logo.png', height: 30),
-
-            const SizedBox(width: 8),
-            const Text(
-              'Welcome! User',
+            const SizedBox(
+              height: 12,
+            ),
+            AppBar(
+              title: Row(
+                children: [
+                  Image.asset('assets/images/image_logo.png', height: 30),
+                  const SizedBox(width: 8),
+                  Text(
+                    'Welcome! ${widget.user['first name']}',
+                  ),
+                ],
+              ),
+              actions: [
+                IconButton(
+                  icon: const Icon(
+                    CupertinoIcons.money_dollar_circle,
+                    size: 30,
+                  ),
+                  onPressed: () {},
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                IconButton(
+                    icon: const Icon(
+                      Icons.notifications_outlined,
+                      size: 30,
+                    ),
+                    onPressed: () {}),
+                const SizedBox(
+                  width: 20,
+                )
+              ],
             ),
           ],
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(CupertinoIcons.money_dollar_circle),
-            onPressed: () {},
-          ),
-          IconButton(
-              icon: const Icon(Icons.notifications_outlined), onPressed: () {}),
-        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _index,

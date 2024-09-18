@@ -29,89 +29,71 @@ class ProfileScreenState extends State<ProfileScreen> {
     String languages = widget.user['languages'].toString().substring(1);
     languages = languages.substring(0, languages.length - 1);
 
-    return Scaffold(
-      body: GradientBackground(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 16.0),
-          child: Column(
-            children: [
-              // SizedBox(height: 5), // Reduced space for safe area
+    return GradientBackground(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 16.0),
+        child: Column(
+          children: [
+            const Text(
+              'Profile',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(
+                height: 10), // Reduced space between title and profile picture
 
-              // Back Button and Title
-              Row(
+            // Profile Picture and Upload Button
+            Align(
+              alignment: Alignment.center, // Move the profile image to the left
+              child: ProfileIcon(
+                profileImage: _profileImage,
+                onImagePicked: _onImagePicked, // Handle the image picked
+              ),
+            ),
+            const SizedBox(
+                height: 30), // Reduced space between profile picture and blocks
+
+            // Profile Info Blocks
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(
-                    icon: const Icon(Icons.arrow_back, color: Colors.white),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
+                  Wrap(
+                    alignment: WrapAlignment.center,
+                    spacing: screenWidth *
+                        0.04, // Dynamic spacing based on screen width
+                    runSpacing: 16,
+                    children: [
+                      buildProfileBlock(
+                          "First Name", widget.user['first name'] ?? ''),
+                      buildProfileBlock(
+                          "Last Name", widget.user['last name'] ?? ''),
+                      buildProfileBlock("Email", widget.user['email'] ?? ''),
+                      buildProfileBlock(
+                          "College", widget.user['college name'] ?? ''),
+                      buildProfileBlock("Language Known", languages),
+                      buildProfileBlock(
+                          "Tech Stack", widget.user['techs'] ?? ''),
+                    ],
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  // Rating and Status row
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      buildRatingBlock(),
+                      buildStatusBlock(),
+                    ],
                   ),
                 ],
               ),
-              const Text(
-                'Profile',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              const SizedBox(
-                  height:
-                      10), // Reduced space between title and profile picture
-
-              // Profile Picture and Upload Button
-              Align(
-                alignment:
-                    Alignment.center, // Move the profile image to the left
-                child: ProfileIcon(
-                  profileImage: _profileImage,
-                  onImagePicked: _onImagePicked, // Handle the image picked
-                ),
-              ),
-              const SizedBox(
-                  height:
-                      10), // Reduced space between profile picture and blocks
-
-              // Profile Info Blocks
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Wrap(
-                      alignment: WrapAlignment.center,
-                      spacing: screenWidth *
-                          0.04, // Dynamic spacing based on screen width
-                      runSpacing: 16,
-                      children: [
-                        buildProfileBlock(
-                            "First Name", widget.user['first name'] ?? ''),
-                        buildProfileBlock(
-                            "Last Name", widget.user['last name'] ?? ''),
-                        buildProfileBlock("Email", widget.user['email'] ?? ''),
-                        buildProfileBlock(
-                            "College", widget.user['college name'] ?? ''),
-                        buildProfileBlock("Language Known", languages),
-                        buildProfileBlock(
-                            "Tech Stack", widget.user['techs'] ?? ''),
-                      ],
-                    ),
-
-                    const SizedBox(height: 20),
-
-                    // Rating and Status row
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        buildRatingBlock(),
-                        buildStatusBlock(),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -126,20 +108,20 @@ class ProfileScreenState extends State<ProfileScreen> {
       decoration: BoxDecoration(
         color: const Color(0xFF666D73),
         borderRadius: BorderRadius.circular(10), // Slightly rounded corners
-        boxShadow: const [
-          BoxShadow(
-            blurRadius: 5,
-            blurStyle: BlurStyle.solid,
-            color: Color(0x4000FFFF),
-            spreadRadius: 3,
-          ),
-          BoxShadow(
-            blurRadius: 5,
-            blurStyle: BlurStyle.solid,
-            color: Color(0xFF00FFFF),
-            spreadRadius: 3,
-          ),
-        ],
+        // boxShadow: const [
+        //   BoxShadow(
+        //     blurRadius: 5,
+        //     blurStyle: BlurStyle.solid,
+        //     color: Color(0x4000FFFF),
+        //     spreadRadius: 3,
+        //   ),
+        //   BoxShadow(
+        //     blurRadius: 5,
+        //     blurStyle: BlurStyle.solid,
+        //     color: Color(0xFF00FFFF),
+        //     spreadRadius: 3,
+        //   ),
+        // ],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -178,7 +160,7 @@ class ProfileScreenState extends State<ProfileScreen> {
 
   // Reusable widget for Rating and Status blocks
   Widget buildRatingBlock() {
-    return buildReusableBlock('Connections', '148', const Color(0xFF0FA867));
+    return buildReusableBlock('Connections', '148', const Color(0xFF9FB640));
   }
 
   Widget buildStatusBlock() {
@@ -197,20 +179,20 @@ class ProfileScreenState extends State<ProfileScreen> {
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: const [
-          BoxShadow(
-            blurRadius: 5,
-            blurStyle: BlurStyle.solid,
-            color: Color(0x4000FFFF),
-            spreadRadius: 3,
-          ),
-          BoxShadow(
-            blurRadius: 5,
-            blurStyle: BlurStyle.solid,
-            color: Color(0xFF00FFFF),
-            spreadRadius: 3,
-          ),
-        ],
+        // boxShadow: const [
+        //   BoxShadow(
+        //     blurRadius: 5,
+        //     blurStyle: BlurStyle.solid,
+        //     color: Color(0x4000FFFF),
+        //     spreadRadius: 3,
+        //   ),
+        //   BoxShadow(
+        //     blurRadius: 5,
+        //     blurStyle: BlurStyle.solid,
+        //     color: Color(0xFF00FFFF),
+        //     spreadRadius: 3,
+        //   ),
+        // ],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -219,7 +201,8 @@ class ProfileScreenState extends State<ProfileScreen> {
             title,
             style: const TextStyle(
               fontSize: 13,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 1,
               color: Colors.white,
             ),
           ),
