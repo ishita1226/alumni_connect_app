@@ -1,4 +1,5 @@
 import 'package:alumni_connect/presentation/pages/home_page.dart';
+import 'package:alumni_connect/presentation/pages/navigator_screen.dart';
 import 'package:alumni_connect/presentation/widgets/gradient_background.dart';
 import 'package:alumni_connect/presentation/widgets/tech_field.dart';
 import 'package:flutter/material.dart';
@@ -84,7 +85,7 @@ class EducationInformationPageState extends State<EducationInformationPage> {
                               // Add registration logic here
                               Navigator.pushAndRemoveUntil(
                                 context,
-                                HomePage.getRoute(),
+                                NavigatorScreen.getRoute(),
                                 (route) => false,
                               );
                             },

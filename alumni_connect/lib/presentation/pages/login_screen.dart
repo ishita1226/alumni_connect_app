@@ -1,4 +1,4 @@
-import 'package:alumni_connect/presentation/pages/home_page.dart';
+import 'package:alumni_connect/presentation/pages/navigator_screen.dart';
 import 'package:alumni_connect/presentation/pages/reg1.dart';
 import 'package:alumni_connect/presentation/widgets/gradient_background.dart';
 import 'package:flutter/material.dart';
@@ -94,7 +94,7 @@ class StudentLoginScreenState extends State<StudentLoginPage> {
                             // Implement login action
                             Navigator.pushAndRemoveUntil(
                               context,
-                              HomePage.getRoute(),
+                              NavigatorScreen.getRoute(),
                               (route) => false,
                             );
                           }
@@ -134,8 +134,9 @@ class StudentLoginScreenState extends State<StudentLoginPage> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    const BasicInformationPage()),
+                              builder: (context) =>
+                                  const BasicInformationPage(),
+                            ),
                           );
                         },
                         child: const Text(

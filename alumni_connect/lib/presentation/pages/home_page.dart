@@ -6,28 +6,9 @@ import 'package:url_launcher/url_launcher.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  static Route getRoute(){
-    return MaterialPageRoute(builder: (context) => const HomePage(),);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Image.asset('assets/images/image.png', height: 30),
-            const SizedBox(width: 8),
-            const Text(
-              'Welcome! User',
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-              icon: const Icon(Icons.notifications_outlined), onPressed: () {}),
-        ],
-      ),
       body: LayoutBuilder(builder: (context, constraints) {
         return Container(
           height: constraints.maxHeight,
@@ -64,15 +45,6 @@ class HomePage extends StatelessWidget {
           ),
         );
       }),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Network'),
-          BottomNavigationBarItem(icon: Icon(Icons.work), label: 'Jobs'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-        ],
-      ),
     );
   }
 
