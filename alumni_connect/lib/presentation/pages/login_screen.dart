@@ -102,6 +102,7 @@ class StudentLoginScreenState extends State<StudentLoginPage> {
                             }
                             return null;
                           },
+                          isEmail: true,
                         ),
                         SizedBox(height: size.height * 0.02),
                         _buildTextField(
@@ -220,11 +221,13 @@ class StudentLoginScreenState extends State<StudentLoginPage> {
     bool isPassword = false,
     required TextEditingController controller,
     required String? Function(String?) validator,
+    bool isEmail = false,
   }) {
     return TextFormField(
       controller: controller,
       obscureText: isPassword ? !_isPasswordVisible : obscureText,
       style: const TextStyle(color: Colors.white),
+      keyboardType: isEmail ? TextInputType.emailAddress : TextInputType.text,
       decoration: InputDecoration(
         labelText: label,
         labelStyle: const TextStyle(color: Colors.white70),

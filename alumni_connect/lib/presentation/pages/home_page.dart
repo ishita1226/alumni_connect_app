@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
     final List<Map<String, String>> events = [
       {
         'title': 'AI Workshop',
-        'date': '2023-09-20',
+        'date': '2024-09-20',
         'time': '14:00',
         'speaker': 'Dr. Jane Smith',
         'mode': 'online',
@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
       },
       {
         'title': 'Career Fair',
-        'date': '2023-09-25',
+        'date': '2024-09-25',
         'time': '10:00',
         'speaker': 'Various Industry Experts',
         'mode': 'offline',
@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
       },
       {
         'title': 'Alumni Meetup',
-        'date': '2023-10-01',
+        'date': '2024-10-01',
         'time': '18:00',
         'speaker': 'Alumni Association',
         'mode': 'offline',
@@ -184,7 +184,7 @@ class HomePage extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
                                     ),
-                                  ).animate().fadeIn(delay: 300.ms).slideY(),
+                                  ).animate().fadeIn(delay: 500.ms).slideY(),
                                   const SizedBox(height: 8),
                                   Text(
                                     '${event['date']} at ${event['time']}',
@@ -192,7 +192,7 @@ class HomePage extends StatelessWidget {
                                       fontSize: 16,
                                       color: Colors.white.withOpacity(0.8),
                                     ),
-                                  ).animate().fadeIn(delay: 400.ms).slideY(),
+                                  ).animate().fadeIn(delay: 800.ms).slideY(),
                                   const SizedBox(height: 4),
                                   Text(
                                     'Speaker: ${event['speaker']}',
@@ -200,7 +200,7 @@ class HomePage extends StatelessWidget {
                                       fontSize: 16,
                                       color: Colors.white.withOpacity(0.8),
                                     ),
-                                  ).animate().fadeIn(delay: 500.ms).slideY(),
+                                  ).animate().fadeIn(delay: 1000.ms).slideY(),
                                   const SizedBox(height: 8),
                                   Row(
                                     children: [
@@ -220,7 +220,7 @@ class HomePage extends StatelessWidget {
                                         ),
                                       ),
                                     ],
-                                  ).animate().fadeIn(delay: 600.ms).slideY(),
+                                  ).animate().fadeIn(delay: 1200.ms).slideY(),
                                 ],
                               ),
                             ),
@@ -230,8 +230,8 @@ class HomePage extends StatelessWidget {
                     ),
                   )
                       .animate()
-                      .scale(duration: 300.ms, curve: Curves.easeOutBack)
-                      .fade(duration: 300.ms),
+                      .scale(duration: 300.ms, curve: Curves.fastOutSlowIn)
+                      .fade(duration: 500.ms),
                 );
               },
             );
@@ -270,8 +270,7 @@ class HomePage extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-              ).animate(delay: (200 * index).ms).fadeIn(duration: 200.ms).scale(
-                  begin: const Offset(0.5, 0.5), end: const Offset(1, 1));
+              );
             },
           ),
         ),

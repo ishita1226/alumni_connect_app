@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsFlutterBinding.ensureInitialized();
     return BlocProvider(
       create: (context) => LoginBloc(),
       child: MaterialApp(
